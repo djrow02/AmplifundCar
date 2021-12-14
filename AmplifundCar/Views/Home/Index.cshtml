@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Model S";
+}
+
+<script>
+    var app = angular.module('myCarApp', [])
+    app.controller('myCtrl', function ($scope, $http) {
+        $scope.OpenFeatureModal = function () {
+            $("#fModal").modal('show');
+        }
+        $scope.OpenBatteryModal = function () {
+            $("#bModal").modal('show');
+        }
+    });
+</script>
+<section ng-app="myCarApp" ng-controller="myCtrl" class="content">
+    <div class="jumbotron">
+        <h1>Tesla Model S</h1>
+        <p class="lead">An all electric car produced by Tesla beginning in 2012.</p>
+        <p><a href="https://www.tesla.com/models" target="_blank" class="btn btn-primary btn-lg">Visit Tesla&rsquo;s Site Here &raquo;</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" style="text-align:center;">
+            <p style="color: red;">I DO NOT OWN THE RIGHTS TO THIS IMAGE, FOR EXAMPLE ONLY</p>
+        </div>
+        <div class="col-md-12" style="text-align:center;">
+            <img src="@Url.Content("~/img/Tesla Image.jpg")" title="I DO NOT OWN THE RIGHTS TO THIS IMAGE, FOR EXAMPLE ONLY" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4" style="text-align: center;">
+            <h2>Lots of great features!</h2>
+            <p><btn ng-click="OpenFeatureModal()" class="btn btn-default">View Features</btn></p>
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+            <h2>Batteries built to last!</h2>
+            <p><btn ng-click="OpenBatteryModal()" class="btn btn-default">View Battery Options</btn></p>
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+            <h2>Get in touch with Tesla!</h2>
+            <p><a href="mailto:fakteslaemail@pleasedontactuallyemailthis.com" class="btn btn-default">Email Tesla!</a></p>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="fModal"
+         data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        ×
+                    </button>
+                    <h4 class="modal-title">Features</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul>
+                                <li>Auto-Pilot</li>
+                                <li>26 Cubic Foot Trunk</li>
+                                <li>Infotainment Screen <small>(Controls most vehicle functions)</small></li>
+                                <li>All Wheel Drive</li>
+                                <li>4 Year 50,000 Mile Warranty</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnHideFModal" data-dismiss="modal" class="btn btn-primary">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="bModal"
+         data-keyboard="false" data-backdrop="static">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        ×
+                    </button>
+                    <h4 class="modal-title">Battery Options</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul>
+                                <li>70</li>
+                                <li>85</li>
+                                <li>P85D</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnHideBModal" data-dismiss="modal" class="btn btn-primary">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
